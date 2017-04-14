@@ -1,0 +1,22 @@
+{
+  "name": "decibel_mockup",
+  "version": "1.0.0",
+  "description": "mockup project for the decibel open source project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MikeAlbo/decibel_mockup.git"
+  },
+  "keywords": [
+    "webAudio"
+  ],
+  "author": "Michael Albonetti",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MikeAlbo/decibel_mockup/issues"
+  },
+  "homepage": "https://github.com/MikeAlbo/decibel_mockup#readme"
+}
