@@ -1,4 +1,4 @@
-//import {fileNameParser} from './core/parsers/fileNameParser';
+
 
 // index.js
 
@@ -11,31 +11,34 @@
  * we are also including the promise structure here that will be moved to a different file
  * */
 
-import {httpReq} from './core/req/httpReq';
+//import {httpReq} from './core/req/httpReq';
+import {simpleAudioLoader} from './core/loaders/simpleLoader';
 
-const decodeAudioFiles = (audioSources)=> {
-	return new Promise((resolve, reject) => {
+// const decodeAudioFiles = (audioSources)=> {
+// 	return new Promise((resolve, reject) => {
+//
+// 		let reqPromises = [];
+//
+// 		audioSources.forEach((source)=> {
+// 			reqPromises.push(httpReq(source, audioSources, ctx));
+// 		});
+//
+// 		return Promise.all(reqPromises).then((dataArrays)=> {
+// 			console.log(reqPromises); //eslint-disable-line no-console
+// 			let dataObject= {};
+// 			dataArrays.forEach((e)=> {
+// 				dataObject[e[0]] = e[1];
+// 			});
+//
+// 			resolve(dataObject);
+// 		}).catch((err)=> {
+// 			reject(err);
+// 		});
+//
+// 	});
+// };
 
-		let reqPromises = [];
 
-		audioSources.forEach((source)=> {
-			reqPromises.push(httpReq(source, audioSources));
-		});
-
-		return Promise.all(reqPromises).then((dataArrays)=> {
-			console.log(reqPromises); //eslint-disable-line no-console
-			let dataObject= {};
-			dataArrays.forEach((e)=> {
-				dataObject[e[0]] = e[1];
-			});
-
-			resolve(dataObject);
-		}).catch((err)=> {
-			reject(err);
-		});
-
-	});
-};
 
 // DEMO AUDIO FILES
 const audioFiles = [
@@ -47,7 +50,7 @@ const audioFiles = [
 
 let decodedAudioFiles = {};
 
-decodeAudioFiles(audioFiles).then((decoded)=> {
+simpleAudioLoader(audioFiles).then((decoded)=> {
 	decodedAudioFiles = decoded;
 	console.log(decodedAudioFiles || "no decoded files"); //eslint-disable-line no-console
 }).catch((e)=> {

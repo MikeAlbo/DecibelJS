@@ -7,7 +7,7 @@
 * */
 
 import {fileNameParser} from '../parsers/fileNameParser';
-
+import {decodeAudio} from '../util/webAudioApiUtilities';
 
 const httpReq = (file, source) => {
 	return new Promise((resolve, reject)=> {
@@ -19,8 +19,12 @@ const httpReq = (file, source) => {
 			req.onload = ()=> {
 				if(req.readyState === 4) {
 					if(req.status === 200){
-						// call the ctx. decodeAudioData once created
-						resolve([preppedFile[0], req.response]);
+						decodeAudio(req.response).then((audioBuffer)=> {
+							resolve([preppedFile[0], audioBuffer]);
+						}).catch((err)=>{
+							reject(err);
+						});
+
 					} else {throw new Error(req.statusText);}
 				} else {
 					throw new Error(req.statusText);
