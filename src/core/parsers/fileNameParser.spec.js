@@ -1,5 +1,4 @@
-import {expect} from 'chai';
-import {assert} from 'chai';
+import {expect, assert} from 'chai';
 import {fileNameParser} from './fileNameParser';
 
 describe('Our first test', () => {
