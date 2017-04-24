@@ -13,31 +13,9 @@
 
 //import {httpReq} from './core/req/httpReq';
 import {simpleAudioLoader} from './core/loaders/simpleLoader';
+import {init} from './core/util/initalize';
 
-// const decodeAudioFiles = (audioSources)=> {
-// 	return new Promise((resolve, reject) => {
-//
-// 		let reqPromises = [];
-//
-// 		audioSources.forEach((source)=> {
-// 			reqPromises.push(httpReq(source, audioSources, ctx));
-// 		});
-//
-// 		return Promise.all(reqPromises).then((dataArrays)=> {
-// 			console.log(reqPromises); //eslint-disable-line no-console
-// 			let dataObject= {};
-// 			dataArrays.forEach((e)=> {
-// 				dataObject[e[0]] = e[1];
-// 			});
-//
-// 			resolve(dataObject);
-// 		}).catch((err)=> {
-// 			reject(err);
-// 		});
-//
-// 	});
-// };
-
+window.addEventListener("load", init, false);
 
 
 // DEMO AUDIO FILES

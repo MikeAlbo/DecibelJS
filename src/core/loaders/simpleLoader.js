@@ -1,28 +1,42 @@
 
+import {decodeAudio} from '../util/webAudioApiUtilities';
 import {httpReq} from '../req/httpReq';
+import {fileNameParser} from '../parsers/fileNameParser';
 
-const simpleAudioLoader = (audioSources)=> {
-	return new Promise((resolve, reject) => {
+var Promise = require('es6-promise');
 
-		let reqPromises = [];
-
-		audioSources.forEach((source)=> {
-			reqPromises.push(httpReq(source, audioSources));
-		});
-
-		return Promise.all(reqPromises).then((dataArrays)=> {
-			console.log(reqPromises); //eslint-disable-line no-console
-			let dataObject= {};
-			dataArrays.forEach((e)=> {
-				dataObject[e[0]] = e[1];
+const audioFileBuilder= (source, audioSource) => {
+	return new Promise((resolve, reject)=>{
+		const parsedFile = fileNameParser(source, audioSource);
+		httpReq(parsedFile[1]).then((arrayBuffer)=> {
+			decodeAudio(arrayBuffer).then((audioBuffer)=> {
+				resolve([parsedFile[0], audioBuffer]);
 			});
-
-			resolve(dataObject);
-		}).catch((err)=> {
+		}).catch((err)=>{
 			reject(err);
 		});
+	});
+};
+
+
+
+const simpleAudioLoader = (audioSource) => {
+
+	let reqPromises = [];
+	audioSource.forEach((source)=> {
+		reqPromises.push(audioFileBuilder(source, audioSource));
+	});
+
+	return Promise.all(reqPromises).then((data)=>{
+		let dataObject = {};
+		data.forEach((e)=>{
+			dataObject[e[0]] = e[1];
+		});
+
+		return dataObject;
 
 	});
+
 };
 
 export {simpleAudioLoader};

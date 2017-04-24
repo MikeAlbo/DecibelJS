@@ -40,3 +40,9 @@ when the site is loaded, a JSON file loader fill begin processing the files on t
 1. ability to setup streaming
 2. ability to connect to streaming services
 
+## exporting
+currently, the output minifies the file
+1. create another build script that runs a uncompressed output
+2. call both, have build to the same directory
+3. have  simplePlayback, liveStream, and DynamicAudio versions as well
+
