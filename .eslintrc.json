@@ -1,9 +1,13 @@
 {
 	"root": true,
+	"plugins": [
+		"promise"
+	],
 	"extends": [
 		"eslint:recommended",
 		"plugin:import/errors",
-		"plugin:import/warnings"
+		"plugin:import/warnings",
+		"plugin:promise/recommended"
 	],
 	"parserOptions": {
 		"ecmaVersion": 7,
@@ -14,6 +18,7 @@
 		"node": true,
 		"mocha": true
 	},
+
 	"rules": {
 		"no-console": 1
 	}

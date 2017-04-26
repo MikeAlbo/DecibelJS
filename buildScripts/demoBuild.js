@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 
 import webpack from 'webpack';
-import webpackConfig from '../webpackConfigFiles/.webpack.config.productionMin';
+import webpackConfig from '../.webpack.config.demo';
 import chalk from 'chalk';
 
 process.env.NODE_ENV = 'production';
@@ -28,6 +28,6 @@ webpack(webpackConfig).run((err, stats)=> {
 	console.log(`Webpack Stats: ${stats}`);
 
 	//build success
-	console.log(chalk.green("Build success, /dist"));
+	console.log(chalk.green("Build success, /demo/public/Example1"));
 	return 0;
 });

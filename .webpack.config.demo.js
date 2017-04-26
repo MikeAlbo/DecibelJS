@@ -4,7 +4,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
 	//debug: true,
-	//devtool: 'inline-source-map',
+	devtool: 'inline-source-map',
 	//noInfo: false,
 	entry: [
 		path.resolve(__dirname, 'src/index')
@@ -12,15 +12,19 @@ export default {
 	target: 'web',
 	output: {
 		path : path.resolve(__dirname, 'demo/public/Example1'),
-		publicPath: '/',
-		filename: 'decibel.js'
+		publicPath: './',
+		filename: 'decibel.js',
+		library: 'Decibel',
+		libraryTarget: 'umd',
+		umdNamedDefine: true,
+		sourceMapFilename: '[name].map'
 	},
 	plugins: [
 
 		//html webpack plugin
 		new HtmlWebpackPlugin({
 			template: 'demo/public/assets/indexTemplate.html',
-			inject: true,
+			inject: 'head',
 			filename: 'index.html'
 		}),
 

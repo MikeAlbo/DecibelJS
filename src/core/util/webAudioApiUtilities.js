@@ -4,6 +4,7 @@
 * utilities provided by the webAudio webAudio Api
 *
 */
+var Promise = require('es6-promise');
 
 import {ctx} from './initalize';
 

@@ -18,19 +18,14 @@ import {init} from './core/util/initalize';
 window.addEventListener("load", init, false);
 
 
-// DEMO AUDIO FILES
-const audioFiles = [
-	"http://localhost:3050/audioFiles/simonSound1.mp3",                // string
-	["src2","http://localhost:3050/audioFiles/simonSound2.mp3"],      // array
-	"http://localhost:3050/audioFiles/simonSound3.mp3",                // string
-	["src4","http://localhost:3050/audioFiles/simonSound4.mp3"]
-];
+export {simpleAudioLoader};
 
-let decodedAudioFiles = {};
+/*
+* as of now, we are exporting the modules as a library, inside the developers main.js file, it is being accessed via Decibel.simpleAudioLoader() Decibel is the Library name as defined inside of the webpack.config file*/
 
-simpleAudioLoader(audioFiles).then((decoded)=> {
-	decodedAudioFiles = decoded;
-	console.log(decodedAudioFiles || "no decoded files"); //eslint-disable-line no-console
-}).catch((e)=> {
-	console.error(e); //eslint-disable-line no-console
-});
+
+
+
+//export default new Decibel();
+
+//export default {Decibel};

@@ -9,9 +9,9 @@ const audioFileBuilder= (source, audioSource) => {
 	return new Promise((resolve, reject)=>{
 		const parsedFile = fileNameParser(source, audioSource);
 		httpReq(parsedFile[1]).then((arrayBuffer)=> {
-			decodeAudio(arrayBuffer).then((audioBuffer)=> {
-				resolve([parsedFile[0], audioBuffer]);
-			});
+			return decodeAudio(arrayBuffer).then((audioBuffer)=> {
+				return resolve([parsedFile[0], audioBuffer]);
+			}).catch((err)=> {reject(err)});
 		}).catch((err)=>{
 			reject(err);
 		});

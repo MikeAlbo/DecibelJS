@@ -13,7 +13,7 @@ export default {
 	output: {
 		path : path.resolve(__dirname, 'dist'),
 		publicPath: '/',
-		filename: 'decibel.min.js'
+		filename: 'min.decibel.js'
 	},
 	plugins: [
 		// eliminate duplicate packages when generating bundle

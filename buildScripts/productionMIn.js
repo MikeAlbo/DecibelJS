@@ -1,12 +1,12 @@
 /* eslint-disable no-console */
 
 import webpack from 'webpack';
-import webpackConfig from '../.webpack.config.prod';
+import webpackConfig from '../.webpack.config.productionMin';
 import chalk from 'chalk';
 
 process.env.NODE_ENV = 'production';
 
-console.log(chalk.blue("Generating production build"));
+console.log(chalk.blue("Generating production Min Build"));
 
 webpack(webpackConfig).run((err, stats)=> {
 	if(err){
