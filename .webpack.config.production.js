@@ -1,6 +1,5 @@
 import path from 'path';
 import webpack from 'webpack';
-
 export default {
 	//debug: true,
 	//devtool: 'inline-source-map',
@@ -12,14 +11,11 @@ export default {
 	output: {
 		path : path.resolve(__dirname, 'dist'),
 		publicPath: '/',
-		filename: 'bundle.js'
+		filename: 'decibel.js'
 	},
 	plugins: [
 		// eliminate duplicate packages when generating bundle
-		new webpack.optimize.DedupePlugin(),
-
-		// Minify JS
-		new webpack.optimize.UglifyJsPlugin()
+		new webpack.optimize.DedupePlugin()
 	],
 	module: {
 		rules: [

@@ -1,25 +1,26 @@
 import path from 'path';
+import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
-	// debug: true,
-	// devtool: 'inline-source-map',
-	// noInfo: false,
+	//debug: true,
+	//devtool: 'inline-source-map',
+	//noInfo: false,
 	entry: [
 		path.resolve(__dirname, 'src/index')
 	],
 	target: 'web',
 	output: {
-		path : path.resolve(__dirname, 'src'),
+		path : path.resolve(__dirname, 'dist'),
 		publicPath: '/',
-		filename: 'bundle.js'
+		filename: 'decibel.min.js'
 	},
 	plugins: [
-		//html webpack plugin
-		new HtmlWebpackPlugin({
-			template: 'demo/indexTemplate.html',
-			inject: true
-		})
+		// eliminate duplicate packages when generating bundle
+		new webpack.optimize.DedupePlugin(),
+
+		// Minify JS
+		new webpack.optimize.UglifyJsPlugin()
 	],
 	module: {
 		rules: [
