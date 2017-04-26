@@ -13,7 +13,7 @@
     "lint:watch": "npm run lint -- --watch",
     "test": "mocha --reporter list buildScripts/testSetup.js \"src/**/*.spec.js\"",
     "test:watch": "npm run test -- --watch",
-    "mockApi": "node demo/mockApi.js",
+    "mockApi": "node demo/dev/mockApi.js",
     "clean-dist": "rimraf ./dist && mkdir dist",
     "clean-demo": "rimraf ./demo/public/Example1 && mkdir ./demo/public/Example1",
     "buildDecibel": "babel-node buildScripts/production.js",

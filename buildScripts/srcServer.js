@@ -14,7 +14,7 @@ const app = express();
 app.use(webpackMiddleware(webpack(config)));
 
 app.get('/', function (req, res) {
-	res.sendFile(path.join(__dirname, '../src/index.html'));
+	res.sendFile(path.join(__dirname, '../demo/dev/devIndex.html'));
 });
 
 app.get('/files', function (req, res) {

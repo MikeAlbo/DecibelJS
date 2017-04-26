@@ -10,7 +10,7 @@ export default {
 	],
 	target: 'web',
 	output: {
-		path : path.resolve(__dirname, 'src'),
+		path : path.resolve(__dirname, 'demo/dev/public'),
 		publicPath: '/',
 		filename: 'bundle.js',
 		library: 'Decibel',
@@ -21,7 +21,7 @@ export default {
 	plugins: [
 		//html webpack plugin
 		new HtmlWebpackPlugin({
-			template: 'demo/public/assets/indexTemplate.html',
+			template: 'demo/dev/public/devIndex.html',
 			inject: 'head'
 		})
 	],
