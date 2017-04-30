@@ -3,3 +3,13 @@ h1 {
 	font-size: 6em;
 	color: green;
 }
+
+#play1 {
+	width:100px;
+	height:100px;
+	color: blue;
+	position: absolute;
+	top: 70%;
+	left:50%;
+	transform: translate(-50%, -30%);
+}

@@ -46,3 +46,5 @@ currently, the output minifies the file
 2. call both, have build to the same directory
 3. have  simplePlayback, liveStream, and DynamicAudio versions as well
 
+## helpers
+* being able to input high, mid, low, ypass, effect name, etc that will select presets

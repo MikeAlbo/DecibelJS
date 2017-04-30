@@ -13,7 +13,6 @@ const init = () => {
 			console.error(e, " browser does not support audio context"); //eslint-disable-line no-console
 		}
 	}
-
 };
 
 export {ctx, init};

@@ -14,3 +14,10 @@ Decibel.simpleAudioLoader(audioFiles).then(function (audioBuffers) {
 }).catch(function (err) {
 	console.log(err);
 });
+
+
+var src1Button = document.getElementById("play1");
+
+src1Button.addEventListener("click", function () {
+	Decibel.playback(decodedAudioFiles.src1);
+});

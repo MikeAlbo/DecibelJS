@@ -14,11 +14,12 @@
 //import {httpReq} from './core/req/httpReq';
 import {simpleAudioLoader} from './core/loaders/simpleLoader';
 import {init} from './core/util/initalize';
+import {playback} from './playback/playback';
 
 window.addEventListener("load", init, false);
 
 
-export {simpleAudioLoader};
+export {simpleAudioLoader, playback};
 
 /*
 * as of now, we are exporting the modules as a library, inside the developers main.js file, it is being accessed via Decibel.simpleAudioLoader() Decibel is the Library name as defined inside of the webpack.config file*/

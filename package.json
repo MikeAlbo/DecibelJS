@@ -58,6 +58,7 @@
     "nsp": "^2.6.3",
     "open": "0.0.5",
     "rimraf": "^2.6.1",
+    "web-audio-test-api": "^0.5.2",
     "webpack": "^2.3.3",
     "webpack-dev-middleware": "^1.10.1",
     "webpack-dev-server": "^2.4.2"
