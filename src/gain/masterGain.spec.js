@@ -1,10 +1,11 @@
 /* master gain spec
-* 1. should import ctx
-* 2. should connect to ctx output
-* 3. should accept at least one input node
-* 4. default volume value should be 1
-* 5. should connect to the ctx.destination
-* 6. should be able to control the volume level from outside the class*/
+* 1. should init a new gain
+* 2. should set default gain level if no params passed
+* 3. should set gain level via param
+* 4. gain level method, should accept a volume param and set the gain value
+* 5. gain level method, should default to 1 if no value is passed
+* 6.  mute channel, should set gain level to 0 when called
+* */
 
 import {expect} from 'chai';
 import 'web-audio-test-api';

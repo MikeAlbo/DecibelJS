@@ -8,9 +8,9 @@
 
 var Promise = require('es6-promise');
 
-const httpReq = (link) => {
+const httpReq = (link, testXML) => {
 		return new Promise((resolve, reject)=> {
-			let req = new XMLHttpRequest();
+			let req = new testXML || XMLHttpRequest() ;
 			req.open('GET', link, true);
 			req.responseType = 'arraybuffer';
 			req.onload = ()=> {
@@ -22,7 +22,8 @@ const httpReq = (link) => {
 			}; // onLoad
 
 			req.onerror = (err) => {
-				reject(new Error(err));
+
+				reject(new Error(req.status));
 			};
 
 			req.send();
